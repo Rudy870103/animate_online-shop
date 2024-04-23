@@ -21,7 +21,7 @@
             <!-- navbar start -->
             <nav class="navbar navbar-expand-lg bg-light">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">AniMate online shop</a>
+                    <a class="navbar-brand" href="index.php">AniMate online shop</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -64,7 +64,7 @@
                         </ul>
                         <div>
                             <div class="mb-2" style="text-align: right;">
-                                <a href="">登入</a>
+                                <a href="?do=login">登入</a>
                                 <a href="">購物車</a>
                             </div>
                             <form class="d-flex" role="search">
