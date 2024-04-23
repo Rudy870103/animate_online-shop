@@ -32,6 +32,8 @@
     
     <div>確認密碼<input type="password" name="pw2" id="pw2"></div><br>
     
+    <div>信箱<input type="text" name="email" id="email"></div><br>
+
     <div>
         <button class="login-btn" onclick="reg()">註冊</button>
         <button class="login-btn" onclick="clean()">重置</button>
@@ -45,10 +47,11 @@
             acc: $("#acc").val(),
             pw: $("#pw").val(),
             pw2: $("#pw2").val(),
+            email: $("#email").val()
         }
 
         // 檢查使用者輸入是否完整
-        if (user.acc != '' && user.pw != '' && user.pw2 != '') {
+        if (user.acc != '' && user.pw != '' && user.pw2 != '' && user.email != '') {
             // 檢查密碼和確認密碼是否相符
             if (user.pw == user.pw2) {
                 // 發送 POST 請求檢查帳號是否重覆
