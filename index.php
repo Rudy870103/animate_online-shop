@@ -64,7 +64,14 @@
                         </ul>
                         <div>
                             <div class="mb-2" style="text-align: right;">
-                                <a href="?do=login">登入</a>
+                                <?php
+                                if (isset($_SESSION['member'])) {
+                                    echo "<a href='?do=member'>會員中心</a>";
+                                    echo "<a href='Javascript:logout()'>登出</a>";
+                                } else {
+                                    echo " <a href='?do=login'>登入</a>";
+                                }
+                                ?>
                                 <a href="">購物車</a>
                             </div>
                             <form class="d-flex" role="search">
@@ -101,3 +108,11 @@
 </body>
 
 </html>
+
+<script>
+    function logout() {
+        if (confirm("即將登出")) {
+            location.href='./api/logout.php';
+        }
+    }
+</script>
