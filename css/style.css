@@ -4,6 +4,16 @@
     line-height: 22px;
 }
 
+h1 {
+    text-align: center;
+    font-weight: 700;
+    padding-top: 150px;
+}
+
+.box {
+    border: 1px solid black;
+    border-radius: 10px;
+}
 
 header .top{
     position: fixed;

@@ -1,29 +1,3 @@
-<style>
-    h1 {
-        text-align: center;
-        font-weight: 700;
-        padding-top: 150px;
-    }
-
-    .box {
-        border: 1px solid black;
-        border-radius: 10px;
-    }
-
-    .mem {
-        color: black;
-    }
-
-    .mem:hover {
-        color: #052659;
-    }
-
-    @media (max-width:768px) {
-        .login {
-            width: 80%;
-        }
-    }
-</style>
 <h1>會員登入<span style="display: block;font-size:16px;margin-top:10px">Login</span></h1>
 <div class="p-5 col-4 box mx-auto text-center">
     <div>帳號 : &nbsp<input type="text" name="acc" id="acc"></div><br>

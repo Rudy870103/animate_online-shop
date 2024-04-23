@@ -66,13 +66,18 @@
                             <div class="mb-2" style="text-align: right;">
                                 <?php
                                 if (isset($_SESSION['member'])) {
-                                    echo "<a href='?do=member'>會員中心</a>";
-                                    echo "<a href='Javascript:logout()'>登出</a>";
+                                    if ($_SESSION['member'] == 'admin') {
+                                        echo "<a href='back.php' class='mx-1'>管理後臺</a>|";
+                                        echo "<a href='Javascript:logout()' class='mx-1'>管理登出</a>";
+                                    } else {
+                                        echo "<a href='' class='mx-1'>購物車</a>|";
+                                        echo "<a href='?do=member' class='mx-1'>會員中心</a>|";
+                                        echo "<a href='Javascript:logout()' class='mx-1'>會員登出</a>";
+                                    }
                                 } else {
                                     echo " <a href='?do=login'>登入</a>";
                                 }
                                 ?>
-                                <a href="">購物車</a>
                             </div>
                             <form class="d-flex" role="search">
                                 <input class="form-control me-2" type="search" placeholder="請輸入關鍵字" aria-label="Search">
@@ -112,7 +117,7 @@
 <script>
     function logout() {
         if (confirm("即將登出")) {
-            location.href='./api/logout.php';
+            location.href = './api/logout.php';
         }
     }
 </script>

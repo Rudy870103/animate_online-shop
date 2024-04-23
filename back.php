@@ -28,44 +28,25 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li class="nav-item">
+                                <a class="nav-link" href="?do=carousel">
+                                    輪播圖管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="?do=member">
+                                    會員管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
                                     寶可夢
                                 </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">草系</a></li>
-                                    <li><a class="dropdown-item" href="#">火系</a></li>
-                                    <li><a class="dropdown-item" href="#">水系</a></li>
-                                    <li><a class="dropdown-item" href="#">電系</a></li>
-                                    <li><a class="dropdown-item" href="#">幽靈系</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    裝備
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">精靈球</a></li>
-                                    <li><a class="dropdown-item" href="#">果實</a></li>
-                                    <li><a class="dropdown-item" href="#">薰香誘餌</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    周邊商品
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">食品</a></li>
-                                    <li><a class="dropdown-item" href="#">服飾</a></li>
-                                    <li><a class="dropdown-item" href="#">文具</a></li>
-                                    <li><a class="dropdown-item" href="#">日常用品</a></li>
-                                </ul>
                             </li>
                         </ul>
                         <div>
                             <div class="mb-2" style="text-align: right;">
-                                <a href="">登入</a>
-                                <a href="">購物車</a>
+                                <a href="Javascript:logout()">管理登出</a>
                             </div>
                             <form class="d-flex" role="search">
                                 <input class="form-control me-2" type="search" placeholder="請輸入關鍵字" aria-label="Search">
@@ -101,3 +82,11 @@
 </body>
 
 </html>
+
+<script>
+    function logout() {
+        if (confirm("即將登出")) {
+            location.href='./api/logout.php';
+        }
+    }
+</script>
