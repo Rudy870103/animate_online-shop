@@ -1,0 +1,18 @@
+*{
+    box-sizing: border-box;
+    text-decoration: none;
+    line-height: 22px;
+}
+
+
+header .top{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+}
+
+footer{
+    height: 260px;
+    background:linear-gradient(to right, rgb(241, 255, 113), rgb(119, 219, 169), rgb(64, 230, 147));
+    margin-top: 60px;
+}
