@@ -39,20 +39,15 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
-                                    寶可夢
+                                <a class="nav-link" href="?do=product">
+                                    商品管理
                                 </a>
                             </li>
                         </ul>
-                        <div>
-                            <div class="mb-2" style="text-align: right;">
-                                <a href="Javascript:logout()">管理登出</a>
-                            </div>
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="請輸入關鍵字" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                        <div class="mb-2" style="text-align: right;">
+                            <a href="Javascript:logout()">管理登出</a>
                         </div>
+
                     </div>
                 </div>
             </nav>
@@ -86,7 +81,7 @@
 <script>
     function logout() {
         if (confirm("即將登出")) {
-            location.href='./api/logout.php';
+            location.href = './api/logout.php';
         }
     }
 </script>

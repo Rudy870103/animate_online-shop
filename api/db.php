@@ -114,3 +114,4 @@ function to($url){
 
 $Member=new DB('member');
 $Carousel=new DB('carousel');
+$Type=new DB('type');
