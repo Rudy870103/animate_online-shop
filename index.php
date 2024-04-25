@@ -29,22 +29,23 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                             <?php
-                                $bigs=$Type->all(['big_id'=>0]);
-                                foreach($bigs as $big){
+                            $bigs = $Type->all(['big_id' => 0]);
+                            foreach ($bigs as $big) {
                             ?>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?=$big['name'];?>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <?php
-                                        $mids=$Type->all(['big_id'=>$big['id']]);
-                                        foreach($mids as $mid){
-                                    ?>
-                                    <li><a class="dropdown-item" href="#"><?=$mid['name'];?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <?= $big['name']; ?>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="?do=product&type=<?=$big['id'];?>">全部商品</a></li>
+                                        <?php
+                                        $mids = $Type->all(['big_id' => $big['id']]);
+                                        foreach ($mids as $mid) {
+                                        ?>
+                                            <li><a class="dropdown-item" href="?do=product&type=<?=$mid['id'];?>"><?= $mid['name']; ?></a></li>
+                                        <?php } ?>
+                                    </ul>
+                                </li>
                             <?php } ?>
                         </ul>
                         <div>
