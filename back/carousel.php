@@ -55,7 +55,7 @@
     $(".show-btn").on("click", function() {
         let id = $(this).data('id');
         $.post("./api/show.php", {
-            id
+            table:'Carousel',id
         }, () => {
             location.reload()
         })
