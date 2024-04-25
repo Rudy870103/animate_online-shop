@@ -28,39 +28,24 @@
 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+                            <?php
+                                $bigs=$Type->all(['big_id'=>0]);
+                                foreach($bigs as $big){
+                            ?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    寶可夢
+                                    <?=$big['name'];?>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">草系</a></li>
-                                    <li><a class="dropdown-item" href="#">火系</a></li>
-                                    <li><a class="dropdown-item" href="#">水系</a></li>
-                                    <li><a class="dropdown-item" href="#">電系</a></li>
-                                    <li><a class="dropdown-item" href="#">幽靈系</a></li>
+                                    <?php
+                                        $mids=$Type->all(['big_id'=>$big['id']]);
+                                        foreach($mids as $mid){
+                                    ?>
+                                    <li><a class="dropdown-item" href="#"><?=$mid['name'];?></a></li>
+                                    <?php } ?>
                                 </ul>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    裝備
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">精靈球</a></li>
-                                    <li><a class="dropdown-item" href="#">果實</a></li>
-                                    <li><a class="dropdown-item" href="#">薰香誘餌</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    周邊商品
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">食品</a></li>
-                                    <li><a class="dropdown-item" href="#">服飾</a></li>
-                                    <li><a class="dropdown-item" href="#">文具</a></li>
-                                    <li><a class="dropdown-item" href="#">日常用品</a></li>
-                                </ul>
-                            </li>
+                            <?php } ?>
                         </ul>
                         <div>
                             <div class="mb-2" style="text-align: right;">
