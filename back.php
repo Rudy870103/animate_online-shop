@@ -39,6 +39,11 @@
                                 </a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="?do=types">
+                                    商品分類管理
+                                </a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="?do=product">
                                     商品管理
                                 </a>
