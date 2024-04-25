@@ -51,7 +51,7 @@
                         <tr>
                             <td><?= $mid['name']; ?></td>
                             <td>
-                                <button onclick="edit(this,<?= $big['id']; ?>)">編輯</button>
+                                <button onclick="edit(this,<?= $mid['id']; ?>)">編輯</button>
                                 <button class="del" data-id="<?= $mid['id']; ?>">刪除</button>
                             </td>
                         </tr>
