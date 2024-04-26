@@ -33,7 +33,7 @@ if ($type != 0) {
                     <div>價格<?= $product['price']; ?></div>
                 </div>
                 <div style="position: absolute;bottom:10px;right:10px;font-size:20px;z-index:999;">
-                    <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <a data-bs-toggle="modal" data-bs-target="#p<?=$product['no'];?>">
                         <span class="material-symbols-outlined">
                             shopping_cart
                         </span>
@@ -41,20 +41,49 @@ if ($type != 0) {
 
                 </div>
             </div>
-
+            
             <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style="margin-top: 30vh;">
-                <div class="modal-dialog">
+            <style>
+                .modal-header{
+                    border: none;
+                }
+                .content{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: start;
+                }
+                .modal-body{
+                    display: flex;
+                }
+                .text{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+            </style>
+            <div class="modal fade" id="p<?=$product['no'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            ...
+                        <div class="content">
+                            <div class="modal-body">
+                                <div style="width: auto;height:200px;overflow:hidden">
+                                    <img src="./img/<?= $product['img']; ?>" class="card-img-top" style="height:100%;width:auto">
+                                </div>
+                                <div class="text mx-2">
+                                    <div style="font-weight:bold">
+                                        <?=$product['name'];?>
+                                    </div>
+                                    <div style="font-weight:bold">
+                                        <?=$product['price'];?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary">加入購物車</button>
+                            <button type="button" onclick="location.href=''">加入購物車</button>
                         </div>
                     </div>
                 </div>
