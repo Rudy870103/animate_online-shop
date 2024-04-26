@@ -24,8 +24,8 @@ if (empty($_SESSION['cart'])) {
             </div>
             <div class="col">
                 <div><?= $item['name']; ?></div>
-                <div class="item-price<?=$item['id'];?>"><?= $item['price'] * $total; ?></div>
-                <input type="hidden" name="price<?=$item['id'];?>" id="price<?=$item['id'];?>" value="<?=$item['price'];?>">
+                <div class="item-price<?= $item['id']; ?>"><?= $item['price'] * $total; ?></div>
+                <input type="hidden" name="price<?= $item['id']; ?>" id="price<?= $item['id']; ?>" value="<?= $item['price']; ?>">
             </div>
             <div class="col">
                 <input type="button" class="less" value="-" data-id="<?= $item['id']; ?>">
@@ -40,18 +40,20 @@ if (empty($_SESSION['cart'])) {
     }
 }
 ?>
+<div class="row col-3">
+    <button onclick="location.href='index.php'">繼續選購</button>
+    <button onclick="location.href='?do=checkout'">前往結帳</button>
+</div>
 
 <script>
-
-
     $(".more").on("click", function() {
         let id = $(this).data("id");
         let input = $("#total" + id);
         let value = parseInt(input.val());
-        let price = parseInt($("#price"+id).val());
+        let price = parseInt($("#price" + id).val());
         if ((value + 1) <= 24) {
             input.val(value + 1);
-            $(".item-price"+id).text(price*parseInt(value+1));
+            $(".item-price" + id).text(price * parseInt(value + 1));
         } else {
             alert("本商品最多可購買24件");
         }
@@ -61,12 +63,12 @@ if (empty($_SESSION['cart'])) {
         let id = $(this).data("id");
         let input = $("#total" + id);
         let value = parseInt(input.val());
-        let price = parseInt($("#price"+id).val());
+        let price = parseInt($("#price" + id).val());
 
         if ((value - 1 >= 1)) {
-            
+
             input.val(value - 1);
-            $(".item-price"+id).text(price*parseInt(value-1));
+            $(".item-price" + id).text(price * parseInt(value - 1));
 
         }
     });
@@ -79,9 +81,15 @@ if (empty($_SESSION['cart'])) {
         }
     }
 
-    function updateTotal(){
+    function updateTotal() {
         let id = $(this).data("id");
         let input = $("#total" + id);
         let value = parseInt(input.val());
+    }
+
+    function removeItem(id){
+        $.post("./api/del_item.php",{id},function(){
+            location.href='index.php?do=buycart';
+        })
     }
 </script>
