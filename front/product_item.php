@@ -25,17 +25,15 @@ $item = $Product->find($_GET['id']);
         <div class="mb-2"><?= $item['intro']; ?></div>
     </div>
     <div>
-        <form action="#" method="post">
-            <div>
-                <input type="button" class="less" value="-">
-                <input type="text" name="total" id="total" value="1" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');checkTotal()">
-                <input type="button" class="more" value="+">
-            </div>
-            <div>
-                <input type="button" value="加入購物車">
-                <input type="button" value="立即結帳" onclick="buycart(<?=$item['id'];?>)">
-            </div>
-        </form>
+        <div>
+            <input type="button" class="less" value="-">
+            <input type="text" name="total" id="total" value="1" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');checkTotal()">
+            <input type="button" class="more" value="+">
+        </div>
+        <div>
+            <input type="button" value="加入購物車">
+            <input type="button" value="立即結帳" onclick="buycart(<?= $item['id']; ?>)">
+        </div>
     </div>
 </div>
 
@@ -60,5 +58,16 @@ $item = $Product->find($_GET['id']);
         if ($("#total").val() > 24 || $("#total").val() < 1) {
             $("#total").val(1);
         }
+    }
+
+    function buycart(id) {
+        let total = $("#total").val();
+        <?php
+        if(!isset($_SESSION['member'])){
+            echo "location.href = '?do=login'";
+        }else{
+        ?>
+        location.href = `?do=buycart&id=${id}&total=${total}`;
+        <?php } ?>
     }
 </script>
