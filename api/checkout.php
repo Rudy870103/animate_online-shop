@@ -1,30 +1,15 @@
 <?php include_once "db.php";
 
-// print_r($_POST);
+$_POST['no']=date("Ymd").rand(100000,999999);
 
-// echo "<br>";
+$_POST['acc']=$_SESSION['member'];
 
-// foreach($_POST['id'] as $id){
-//     print_r($id);
-//     echo "<br>";
-// }
+$_POST['product']=serialize($_SESSION['cart']);
 
-// echo "<br>";
+$_POST['orderdate']=date('Y-m-d');
 
-// foreach($_SESSION['cart'] as $id => $total){
-//     echo "id=";
-//     print_r($id);
-//     echo "<br>";
-//     echo "total=";
-//     print_r($total);
-// }
+$Orders->save($_POST);
 
-// echo "<br>";
+unset($_SESSION['cart']);
 
-foreach($_POST['id'] as $id){
-    foreach($_SESSION['cart'] as $id => $total){
-        $_SESSION['cart'][$id]=$_POST['total'.$id];
-    }        
-}
-
-print_r($_SESSION['cart']);
+to("../index.php?do=order");

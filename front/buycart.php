@@ -7,7 +7,7 @@ if (empty($_SESSION['cart'])) {
     echo "<h3>購物車目前是空的</h3>";
 } else {
 ?>
-    <form action="./api/checkout.php" method="post">
+    <form action="./api/buycart.php" method="post">
         <?php
         foreach ($_SESSION['cart'] as $id => $total) {
             $item = $Product->find($id);
