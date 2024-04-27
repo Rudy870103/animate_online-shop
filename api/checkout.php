@@ -12,4 +12,4 @@ $Orders->save($_POST);
 
 unset($_SESSION['cart']);
 
-to("../index.php?do=order");
+to("../index.php?do=order&no={$_POST['no']}");
