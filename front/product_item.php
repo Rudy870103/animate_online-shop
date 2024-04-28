@@ -31,7 +31,7 @@ $item = $Product->find($_GET['id']);
             <input type="button" class="more" value="+">
         </div>
         <div>
-            <input type="button" value="加入購物車">
+            <input type="button" onclick="fast_buycart(<?=$item['id'];?>)" value="加入購物車">
             <input type="button" value="立即結帳" onclick="buycart(<?= $item['id']; ?>)">
         </div>
     </div>
@@ -68,6 +68,18 @@ $item = $Product->find($_GET['id']);
         }else{
         ?>
         location.href = `?do=buycart&id=${id}&total=${total}`;
+        <?php } ?>
+    }
+    function fast_buycart(id) {
+        let total = $("#total").val();
+        <?php
+        if(!isset($_SESSION['member'])){
+            echo "location.href = '?do=login'";
+        }else{
+        ?>
+        $.post("./api/fast_buycart.php",{id,total},()=>{
+            location.reload();
+        });
         <?php } ?>
     }
 </script>

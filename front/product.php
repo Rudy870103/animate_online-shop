@@ -33,7 +33,7 @@ if ($type != 0) {
                     <div>價格<?= $product['price']; ?></div>
                 </div>
                 <div style="position: absolute;bottom:10px;right:10px;font-size:20px;z-index:999;">
-                    <a data-bs-toggle="modal" data-bs-target="#p<?=$product['no'];?>">
+                    <a data-bs-toggle="modal" data-bs-target="#p<?= $product['no']; ?>">
                         <span class="material-symbols-outlined">
                             shopping_cart
                         </span>
@@ -41,27 +41,30 @@ if ($type != 0) {
 
                 </div>
             </div>
-            
+
             <!-- Modal -->
             <style>
-                .modal-header{
+                .modal-header {
                     border: none;
                 }
-                .content{
+
+                .content {
                     display: flex;
                     justify-content: space-between;
                     align-items: start;
                 }
-                .modal-body{
+
+                .modal-body {
                     display: flex;
                 }
-                .text{
+
+                .text {
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
                 }
             </style>
-            <div class="modal fade" id="p<?=$product['no'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="p<?= $product['no']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" style="max-width: 600px;">
                     <div class="modal-content">
                         <div class="content">
@@ -71,11 +74,17 @@ if ($type != 0) {
                                 </div>
                                 <div class="text mx-2">
                                     <div style="font-weight:bold">
-                                        <?=$product['name'];?>
+                                        <?= $product['name']; ?>
                                     </div>
                                     <div style="font-weight:bold">
-                                        <?=$product['price'];?>
+                                        <?= $product['price']; ?>
                                     </div>
+                                </div>
+                                <div>
+                                    <input type="button" class="less" value="-">
+                                    <input type="text" name="total" id="total" value="1" pattern="[0-9]*" 
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');checkTotal()" style="width: 100px;">
+                                    <input type="button" class="more" value="+">
                                 </div>
                             </div>
                             <div class="modal-header">
@@ -83,7 +92,7 @@ if ($type != 0) {
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" onclick="location.href=''">加入購物車</button>
+                            <button type="button" onclick="fast_buycart(<?=$product['id'];?>)">加入購物車</button>
                         </div>
                     </div>
                 </div>
@@ -92,3 +101,40 @@ if ($type != 0) {
 
     </div>
 </fieldset>
+
+<script>
+    let a = 1;
+    $(".more").on("click", function() {
+        if ((a + 1) <= 24) {
+            a++;
+            $("#total").val(a);
+        } else {
+            alert("本商品最多可購買24件");
+        }
+    })
+    $(".less").on("click", function() {
+        if ((a - 1 >= 1)) {
+            a--;
+            $("#total").val(a);
+        }
+    })
+
+    function checkTotal() {
+        if ($("#total").val() > 24 || $("#total").val() < 1) {
+            $("#total").val(1);
+        }
+    }
+
+    function fast_buycart(id) {
+        let total = $("#total").val();
+        <?php
+        if(!isset($_SESSION['member'])){
+            echo "location.href = '?do=login'";
+        }else{
+        ?>
+        $.post("./api/fast_buycart.php",{id,total},()=>{
+            location.reload();
+        });
+        <?php } ?>
+    }
+</script>
