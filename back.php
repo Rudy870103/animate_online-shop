@@ -49,6 +49,11 @@
                                     商品管理
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="?do=order">
+                                    訂單管理
+                                </a>
+                            </li>
                         </ul>
                         <div class="mb-2" style="text-align: right;">
                             <a href="Javascript:logout()">管理登出</a>
