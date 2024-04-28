@@ -57,7 +57,7 @@
                                         echo "<a href='back.php' class='mx-1'>管理後臺</a>|";
                                         echo "<a href='Javascript:logout()' class='mx-1'>管理登出</a>";
                                     } else {
-                                        echo "<a href='' class='mx-1'>購物車</a>|";
+                                        echo "<a href='?do=buycart' class='mx-1'>購物車</a>|";
                                         echo "<a href='?do=member' class='mx-1'>會員中心</a>|";
                                         echo "<a href='Javascript:logout()' class='mx-1'>會員登出</a>";
                                     }

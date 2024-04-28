@@ -34,7 +34,7 @@
             <td><?=$row['name'];?></td>
             <td><?=$row['orderdate'];?></td>
             <td>
-                <button>刪除</button>
+                <button class="del" data-id="<?=$row['id'];?>">刪除</button>
             </td>
         </tr>
         <?php
@@ -45,8 +45,8 @@
 
 <script>
   $(".del").on("click",function(){
-    if(confirm("確定刪除該會員?")){
-        $.post("./api/del.php",{table:'Member',id:$(this).data('id')},()=>{
+    if(confirm("確定刪除該筆資料?")){
+        $.post("./api/del.php",{table:'Orders',id:$(this).data('id')},()=>{
             location.reload();
         })
     }

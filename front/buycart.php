@@ -43,7 +43,7 @@ if (empty($_SESSION['cart'])) {
         <?php
         } ?>
         <div class="row col-3">
-            <button onclick="location.href='index.php'">繼續選購</button>
+            <input type="button" onclick="location.href='index.php'" value="繼續選購">
             <input type="submit" value="前往結帳">
         </div>
     </form>
