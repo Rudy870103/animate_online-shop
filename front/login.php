@@ -3,12 +3,12 @@
     <div>帳號 : &nbsp<input type="text" name="acc" id="acc"></div><br>
     <div>密碼 : &nbsp<input type="password" name="pw" id="pw"></div><br>
     <div class="mb-5">
-        <input class="login-btn" type="button" value="登入" onclick="login()">
-        <input class="login-btn" type="reset" value="重置" onclick="clean()">
+        <input class="myBtn" type="button" value="登入" onclick="login()">
+        <input class="myBtn" type="reset" value="重置" onclick="clean()">
     </div>
 
     <div>
-        <a href="?do=forget" class="mem">忘記密碼</a> | <a href="?do=reg" class="mem">尚未註冊</a>
+        <a href="?do=forget" class="mem" style="color:black">忘記密碼</a> | <a href="?do=reg" class="mem" style="color:black">尚未註冊</a>
     </div>
 </div>
 

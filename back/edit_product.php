@@ -13,40 +13,40 @@ $product = $Product->find($_GET['id']);
     <div class="p-2 col-6 box mx-auto">
         <table style="width: 100%;">
             <tr>
-                <td class="title">商品編號</td>
-                <td><?=$product['no'];?></td>
+                <td class="title">商品編號 |</td>
+                <td class="px-2"><span class="p-2" style="background-color: yellow"><?=$product['no'];?></span></td>
             </tr>
             <tr>
-                <td class="title">所屬大分類</td>
-                <td><select name="big" id="big"></select></td>
+                <td class="title">所屬大分類 |</td>
+                <td class="px-2"><select name="big" id="big"></select></td>
             </tr>
             <tr>
-                <td class="title">所屬中分類</td>
-                <td><select name="mid" id="mid"></select></td>
+                <td class="title">所屬中分類 |</td>
+                <td class="px-2"><select name="mid" id="mid"></select></td>
             </tr>
             <tr>
-                <td class="title">商品名稱</td>
-                <td><input type="text" name="name" value="<?= $product['name']; ?>"></td>
+                <td class="title">商品名稱 |</td>
+                <td class="px-2"><input type="text" name="name" value="<?= $product['name']; ?>"></td>
             </tr>
             <tr>
-                <td class="title">價格</td>
-                <td><input type="text" name="price" value="<?= $product['price']; ?>"></td>
+                <td class="title">價格 |</td>
+                <td class="px-2"><input type="text" name="price" value="<?= $product['price']; ?>"></td>
             </tr>
             <tr>
-                <td class="title">規格</td>
-                <td><input type="text" name="spec" value="<?= $product['spec']; ?>"></td>
+                <td class="title">規格 |</td>
+                <td class="px-2"><input type="text" name="spec" value="<?= $product['spec']; ?>"></td>
             </tr>
             <tr>
-                <td class="title">庫存</td>
-                <td><input type="text" name="stock" value="<?= $product['stock']; ?>"></td>
+                <td class="title">庫存 |</td>
+                <td class="px-2"><input type="text" name="stock" value="<?= $product['stock']; ?>"></td>
             </tr>
             <tr>
-                <td class="title">商品簡介</td>
-                <td><textarea name="intro" id="intro"><?= $product['intro']; ?></textarea></td>
+                <td class="title">商品簡介 |</td>
+                <td class="px-2"><textarea name="intro" id="intro" style="width:60%;height:80px"><?= $product['intro']; ?></textarea></td>
             </tr>
             <tr>
-                <td class="title">商品圖片</td>
-                <td><input type="file" name="img" id="img"></td>
+                <td class="title">商品圖片 |</td>
+                <td class="px-2"><input type="file" name="img" id="img"></td>
             </tr>
         </table>
 

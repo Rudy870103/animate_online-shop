@@ -16,11 +16,11 @@
 <div class="p-5 mx-auto text-center member">
     <table class="box">
         <tr>
-            <th>訂單編號</th>
+            <th class="color">訂單編號</th>
             <th>金額</th>
-            <th>會員帳號</th>
+            <th class="color">會員帳號</th>
             <th>姓名</th>
-            <th>下單日期</th>
+            <th class="color">下單日期</th>
             <th>操作</th>
         </tr>
         <?php
@@ -28,13 +28,13 @@
         foreach($rows as $row){
         ?>
         <tr>
-            <td><a href="?do=order_info&id=<?=$row['id'];?>"><?=$row['no'];?></a></td>
+            <td class="color"><a href="?do=order_info&id=<?=$row['id'];?>"><?=$row['no'];?></a></td>
             <td><?=$row['total'];?></td>
-            <td><?=$row['acc'];?></td>
+            <td class="color"><?=$row['acc'];?></td>
             <td><?=$row['name'];?></td>
-            <td><?=$row['orderdate'];?></td>
+            <td class="color"><?=$row['orderdate'];?></td>
             <td>
-                <button class="del" data-id="<?=$row['id'];?>">刪除</button>
+                <button class="del delBtn" data-id="<?=$row['id'];?>">刪除</button>
             </td>
         </tr>
         <?php

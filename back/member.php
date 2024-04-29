@@ -17,8 +17,9 @@
     <table class="box">
         <tr>
             <th>帳號</th>
-            <th>姓名</th>
+            <th class="color">姓名</th>
             <th>電話</th>
+            <th class="color">註冊日期</th>
             <th>操作</th>
         </tr>
         <?php
@@ -27,8 +28,9 @@
         ?>
         <tr>
             <td><?=$row['acc'];?></td>
-            <td><?=$row['name'];?></td>
+            <td class="color"><?=$row['name'];?></td>
             <td><?=$row['tel'];?></td>
+            <td class="color"><?=$row['regdate'];?></td>
             <td>
                 <?php
                 if($row['acc']=='admin'){
@@ -37,8 +39,8 @@
                 <?php
                 }else{
                 ?>
-                <button onclick="location.href='?do=edit_mem&id=<?=$row['id'];?>'">編輯</button>
-                <button class="del" data-id="<?=$row['id'];?>">刪除</button>
+                <button class="myBtn" onclick="location.href='?do=edit_mem&id=<?=$row['id'];?>'">編輯</button>
+                <button class="del delBtn" data-id="<?=$row['id'];?>">刪除</button>
                 <?php } ?>
             </td>
         </tr>

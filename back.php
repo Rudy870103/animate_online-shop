@@ -26,7 +26,16 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
+                    <style>
+                        .nav-link{
+                            display: inline-block;
+                            font-weight: bold;
+                        }
+                        .nav-link:hover{
+                            background-color: rgb(64, 230, 147);
+                            color: white;
+                        }
+                    </style>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
                             <li class="nav-item">
@@ -56,7 +65,8 @@
                             </li>
                         </ul>
                         <div class="mb-2" style="text-align: right;">
-                            <a href="Javascript:logout()">管理登出</a>
+                            <button class="myBtn" onclick="logout()"><i class="fa-solid fa-right-from-bracket">管理登出</i></button>
+                            <!-- <a href="Javascript:logout()"><i class="fa-solid fa-right-from-bracket"></i>管理登出</a> -->
                         </div>
 
                     </div>

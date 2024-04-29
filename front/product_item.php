@@ -31,8 +31,8 @@ $item = $Product->find($_GET['id']);
             <input type="button" class="more" value="+">
         </div>
         <div>
-            <input type="button" onclick="fast_buycart(<?=$item['id'];?>)" value="加入購物車">
-            <input type="button" value="立即結帳" onclick="buycart(<?= $item['id']; ?>)">
+            <input class="buyBtn2" type="button" onclick="fast_buycart(<?=$item['id'];?>)" value="加入購物車">
+            <input class="buyBtn" type="button" value="立即結帳" onclick="buycart(<?= $item['id']; ?>)">
         </div>
     </div>
 </div>

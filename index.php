@@ -38,12 +38,12 @@
                                         <?= $big['name']; ?>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="?do=product&type=<?=$big['id'];?>">全部商品</a></li>
+                                        <li><a class="dropdown-item" href="?do=product&type=<?= $big['id']; ?>">全部商品</a></li>
                                         <?php
                                         $mids = $Type->all(['big_id' => $big['id']]);
                                         foreach ($mids as $mid) {
                                         ?>
-                                            <li><a class="dropdown-item" href="?do=product&type=<?=$mid['id'];?>"><?= $mid['name']; ?></a></li>
+                                            <li><a class="dropdown-item" href="?do=product&type=<?= $mid['id']; ?>"><?= $mid['name']; ?></a></li>
                                         <?php } ?>
                                     </ul>
                                 </li>
@@ -57,17 +57,21 @@
                                         echo "<a href='back.php' class='mx-1'>管理後臺</a>|";
                                         echo "<a href='Javascript:logout()' class='mx-1'>管理登出</a>";
                                     } else {
-                                        if(isset($_SESSION['cart'])){
-                                            $buycartTotal=count($_SESSION['cart']);
+                                        if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+                                            $buycartTotal = "(". count($_SESSION['cart']) . ")";
+                                        } else {
+                                            $buycartTotal = '';
                                         }
-                                        echo "<a href='?do=buycart' class='mx-1'>購物車".$buycartTotal."</a>|";
-                                        echo "<a href='?do=member' class='mx-1'>會員中心</a>|";
-                                        echo "<a href='Javascript:logout()' class='mx-1'>會員登出</a>";
+                                ?>
+                                        <button onclick="location.href='?do=buycart'" class='mx-1 myBtn'><i class="fa-solid fa-cart-shopping"></i>購物車<?= $buycartTotal; ?></button>
+                                        <button onclick="location.href='?do=member'" class='mx-1 myBtn'><i class="fa-solid fa-user"></i>會員中心</button>
+                                        <button onclick="logout()" class='mx-1 delBtn'><i class="fa-solid fa-right-from-bracket"></i>會員登出</button>
+                                    <?php
                                     }
                                 } else {
-                                    echo " <a href='?do=login'>登入</a>";
-                                }
-                                ?>
+                                    ?>
+                                    <button class='myBtn' onclick="location.href='?do=login'"><i class='fa-solid fa-user'></i> 登入</button>
+                                <?php } ?>
                             </div>
                             <form class="d-flex" role="search">
                                 <input class="form-control me-2" type="search" placeholder="請輸入關鍵字" aria-label="Search">
@@ -80,7 +84,6 @@
             <!-- navbar end -->
         </div>
     </header>
-
 
     <main class="container">
         <?php

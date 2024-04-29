@@ -11,7 +11,7 @@
 h1 {
     text-align: center;
     font-weight: 700;
-    padding-top: 150px;
+    padding-top: 50px;
 }
 
 .box {
@@ -29,4 +29,80 @@ footer{
     height: 260px;
     background:linear-gradient(to right, rgb(241, 255, 113), rgb(119, 219, 169), rgb(64, 230, 147));
     margin-top: 60px;
+}
+
+.myBtn{
+    border: 2px solid #006aff;
+    border-radius: 5px;
+    padding: 2px 8px;
+    background-color: white;
+    color: #006aff;
+    font-weight: bold;
+}
+
+.myBtn:hover{
+    background-color: #006aff;
+    color: white;
+}
+
+.delBtn{
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    padding: 2px 8px;
+    background-color: white;
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.delBtn:hover{
+    background-color: #ff0000;
+    color: white;
+}
+
+.showBtn{
+    border: 2px solid #218500;
+    border-radius: 5px;
+    padding: 2px 8px;
+    background-color: white;
+    color: #218500;
+    font-weight: bold;
+}
+
+.showBtn:hover{
+    border: 2px solid #218500;
+    border-radius: 5px;
+    padding: 2px 8px;
+    background-color: #218500;
+    color: white;
+    font-weight: bold;
+}
+
+.buyBtn{
+    border: 2px solid #2a2a2a;
+    border-radius: 5px;
+    padding: 8px 15px;
+    background-color: #2a2a2a;
+    color: white;
+    font-weight: bold;
+}
+
+.buyBtn:hover{
+    background-color: #444444;
+}
+
+.buyBtn2{
+    border: 1px solid #2a2a2a;
+    border-radius: 5px;
+    padding: 8px 15px;
+    background-color: white;
+    color: #2a2a2a;
+}
+
+.buyBtn2:hover{
+    background-color: rgb(218, 218, 218);
+}
+
+/* 表格顏色區分 */
+.color{
+    background-color: #d1ffcd;
 }

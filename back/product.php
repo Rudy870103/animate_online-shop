@@ -7,8 +7,9 @@
         border: 1px solid black;
     }
 
-    td {
+    td, th {
         height: 50px;
+        padding: 5px;
     }
 </style>
 <h1>商品管理<span style="display: block;font-size:16px;margin-top:10px">Product</span></h1>
@@ -16,30 +17,30 @@
 
 <div style="width: 80%;margin:auto;">
     <div class="product">
-        <button onclick="location.href='?do=add_product'">新增商品</button>
-        <table>
+        <button class="myBtn mb-2" onclick="location.href='?do=add_product'">+新增商品</button>
+        <table class="text-center" style="width:100%">
             <tr>
-                <td>商品編號</td>
-                <td>商品圖片</td>
-                <td>商品名稱</td>
-                <td>庫存</td>
-                <td>規格</td>
-                <td>操作</td>
+                <th class="color">商品編號</th>
+                <th>商品圖片</th>
+                <th class="color">商品名稱</th>
+                <th>庫存</th>
+                <th class="color">規格</th>
+                <th>操作</th>
             </tr>
             <?php
             $rows = $Product->all(" order by `rank` desc");
             foreach ($rows as $idx => $row) {
             ?>
                 <tr>
-                    <td><?= $row['no']; ?></td>
+                    <td class="color"><?= $row['no']; ?></td>
                     <td><img src="../img/<?= $row['img']; ?>" style="width: 100px;"></td>
-                    <td><?= $row['name']; ?></td>
+                    <td class="color"><?= $row['name']; ?></td>
                     <td><?= $row['stock']; ?></td>
-                    <td><?= $row['spec']; ?></td>
+                    <td class="color"><?= $row['spec']; ?></td>
                     <td>
-                        <button onclick="location.href='?do=edit_product&id=<?=$row['id'];?>'">修改</button>
-                        <button class="del-product" data-id="<?= $row['id']; ?>">刪除</button>
-                        <button class='show-btn login-btn' data-id="<?= $row['id']; ?>"><?= ($row['sh'] == 1) ? '下架' : '上架'; ?></button>
+                        <button class="myBtn" onclick="location.href='?do=edit_product&id=<?=$row['id'];?>'">編輯</button>
+                        <button class='show-btn login-btn showBtn' data-id="<?= $row['id']; ?>"><?= ($row['sh'] == 1) ? '下架' : '上架'; ?></button>
+                        <button class="del-product delBtn" data-id="<?= $row['id']; ?>">刪除</button>
                         <button class='sw-btn login-btn' data-id="<?= $row['id']; ?>" data-sw="<?= ($idx !== 0) ? $rows[$idx - 1]['id'] : $row['id']; ?>">前移
                         </button>
                         <button class='sw-btn login-btn' data-id="<?= $row['id']; ?>" data-sw="<?= ((count($rows) - 1) != $idx) ? $rows[$idx + 1]['id'] : $row['id']; ?>">後移

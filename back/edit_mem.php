@@ -6,31 +6,31 @@ $mem=$Member->find($_GET['id']);
     <div class="p-5 col-4 box mx-auto text-center">
         <table style="width: 100%;">
             <tr>
-                <td style="text-align: end;height:50px">帳號</td>
+                <td style="text-align: end;height:50px">帳號 |</td>
                 <td><input type="text" name="acc" value="<?=$mem['acc'];?>"></td>
             </tr>
             <tr>
-                <td style="text-align: end;height:50px">密碼</td>
+                <td style="text-align: end;height:50px">密碼 |</td>
                 <td><input type="text" name="pw" value="<?=$mem['pw'];?>"></td>
             </tr>
             <tr>
-                <td style="text-align: end;height:50px">姓名</td>
+                <td style="text-align: end;height:50px">姓名 |</td>
                 <td><input type="text" name="name" value="<?=$mem['name'];?>"></td>
             </tr>
             <tr>
-                <td style="text-align: end;height:50px">手機</td>
+                <td style="text-align: end;height:50px">手機 |</td>
                 <td><input type="text" name="tel" value="<?=$mem['tel'];?>"></td>
             </tr>
             <tr>
-                <td style="text-align: end;height:50px">地址</td>
+                <td style="text-align: end;height:50px">地址 |</td>
                 <td><input type="text" name="addr" value="<?=$mem['addr'];?>"></td>
             </tr>
             <tr>
-                <td style="text-align: end;height:50px">信箱</td>
+                <td style="text-align: end;height:50px">信箱 |</td>
                 <td><input type="text" name="email" value="<?=$mem['email'];?>"></td>
             </tr>
             <tr>
-                <td style="text-align: end;height:50px">註冊日期</td>
+                <td style="text-align: end;height:50px">註冊日期 |</td>
                 <td><input type="text" name="regdate" value="<?=$mem['regdate'];?>" readonly></td>
             </tr>
         </table>
