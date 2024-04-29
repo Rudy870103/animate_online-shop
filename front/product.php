@@ -7,7 +7,7 @@ if ($type != 0) {
         $nav = $t['name'];
     } else {
         $products = $Product->all(['mid' => $type, 'sh' => 1], " order by `rank` desc");
-        $nav = $Type->find($t['big_id'])['name'] . ">" . $t['name'];
+        $nav = $Type->find($t['big_id'])['name'] . " > " . $t['name'];
     }
 } else {
     $products = $Product->all(['sh' => 1], " order by `rank` desc");
@@ -20,13 +20,14 @@ if ($type != 0) {
         cursor: pointer;
     }
 </style>
-<fieldset style="padding-top: 150px;">
-    <legend><?= $nav; ?></legend>
-    <div class="d-flex" style="gap: 1%;">
+<div class="mx-auto" style="padding-top: 50px;width:80%;">
+    <h1><?= $nav; ?></h1>
+    <hr>
+    <div class="d-flex justify-content-between" style="flex-wrap:wrap">
         <?php
         foreach ($products as $product) {
         ?>
-            <div class="card" style="width: 18rem;position:relative;z-index:1">
+            <div class="card mb-2" style="width: 24%;position:relative;z-index:1;border:none">
                 <img src="./img/<?= $product['img']; ?>" class="card-img-top" onclick="location.href='?do=product_item&id=<?= $product['id']; ?>'">
                 <div class="card-body">
                     <div style="font-weight: bold;"><?= $product['name']; ?></div>
@@ -80,7 +81,6 @@ if ($type != 0) {
                                         <?= $product['price']; ?>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="modal-header">
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -100,7 +100,7 @@ if ($type != 0) {
         <?php } ?>
 
     </div>
-</fieldset>
+</div>
 
 <script>
     $(".more").on("click", function() {
