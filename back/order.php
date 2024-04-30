@@ -24,7 +24,7 @@
             <th>操作</th>
         </tr>
         <?php
-        $rows=$Orders->all();
+        $rows=$Orders->all(" order by `id` desc");
         foreach($rows as $row){
         ?>
         <tr>

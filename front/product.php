@@ -14,12 +14,6 @@ if ($type != 0) {
     $nav = "全部商品";
 }
 ?>
-<style>
-    .card:hover {
-        box-shadow: 0px 0px 10px gray;
-        cursor: pointer;
-    }
-</style>
 <div class="mx-auto" style="padding-top: 50px;width:80%;">
     <h1><?= $nav; ?></h1>
     <hr>
@@ -27,8 +21,21 @@ if ($type != 0) {
         <?php
         foreach ($products as $product) {
         ?>
+            <style>
+                .card:hover {
+                    box-shadow: 0px 0px 10px gray;
+                    cursor: pointer;
+                }
+
+                .card-img-top {
+                    width: 100%;
+                    height:250px;
+                    background-size: cover;
+                    background-position: center;
+                }
+            </style>
             <div class="card mb-2" style="width: 24%;position:relative;z-index:1;border:none;">
-                <img src="./img/<?= $product['img']; ?>" class="card-img-top" onclick="location.href='?do=product_item&id=<?= $product['id']; ?>'">
+                <div class="card-img-top" style="background-image: url(./img/<?= $product['img']; ?>);" onclick="location.href='?do=product_item&id=<?= $product['id']; ?>'"></div>
                 <div class="card-body">
                     <div style="font-weight: bold;"><?= $product['name']; ?></div>
                     <div style="color:#218500;font-weight:bold">NT$<?= number_format($product['price']); ?></div>
@@ -88,9 +95,9 @@ if ($type != 0) {
                         </div>
                         <div class="modal-footer d-flex justify-content-between">
                             <div>
-                                <input type="button" data-id="<?=$product['id'];?>" class="less" value="-">
-                                <input type="text" name="total" id="total<?=$product['id'];?>" value="1" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');checkTotal()" style="width: 100px;">
-                                <input type="button" data-id="<?=$product['id'];?>" class="more" value="+">
+                                <input type="button" data-id="<?= $product['id']; ?>" class="less" value="-">
+                                <input type="text" name="total" id="total<?= $product['id']; ?>" value="1" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');checkTotal()" style="width: 100px;">
+                                <input type="button" data-id="<?= $product['id']; ?>" class="more" value="+">
                             </div>
                             <button class="buyBtn" type="button" onclick="fast_buycart(<?= $product['id']; ?>)">加入購物車</button>
                         </div>
@@ -104,33 +111,33 @@ if ($type != 0) {
 
 <script>
     $(".more").on("click", function() {
-        let id=$(this).data("id");
-        let value=parseInt($("#total"+id).val());
+        let id = $(this).data("id");
+        let value = parseInt($("#total" + id).val());
         if ((value + 1) <= 24) {
             value++;
-            $("#total"+id).val(value);
+            $("#total" + id).val(value);
         } else {
             alert("本商品最多可購買24件");
         }
     })
     $(".less").on("click", function() {
-        let id=$(this).data("id");
-        let value=parseInt($("#total"+id).val());
+        let id = $(this).data("id");
+        let value = parseInt($("#total" + id).val());
         if ((value - 1 >= 1)) {
             value--;
-            $("#total"+id).val(value);
+            $("#total" + id).val(value);
         }
     })
 
     function checkTotal() {
-        let id=$(this).data("id");
-        if ($("#total"+id).val() > 24 || $("#total"+id).val() < 1) {
-            $("#total"+id).val(1);
+        let id = $(this).data("id");
+        if ($("#total" + id).val() > 24 || $("#total" + id).val() < 1) {
+            $("#total" + id).val(1);
         }
     }
 
     function fast_buycart(id) {
-        let total = parseInt($("#total"+id).val());
+        let total = parseInt($("#total" + id).val());
         <?php
         if (!isset($_SESSION['member'])) {
             echo "location.href = '?do=login'";

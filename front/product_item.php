@@ -24,14 +24,14 @@ $item = $Product->find($_GET['id']);
     }
 </style>
 <div class="d-flex mt-5 mx-auto" style="width: 80%;">
-    <div class="mx-auto" style="width: 40%;">
+    <div class="mx-auto" style="width: 40%;overflow:hidden">
         <img src="./img/<?= $item['img']; ?>" style="width: 100%;">
     </div>
-    <div class="mx-auto">
+    <div class="mx-auto" style="width: 40%;">
         <div class="mb-3" style="font-size: 25px;font-weight:bold">
             <?= $item['name']; ?>
         </div>
-        <div class="mb-5" style="font-size: 28px;font-weight:bold">NT$<?= $item['price']; ?></div>
+        <div class="mb-5" style="font-size: 28px;font-weight:bold">NT$<?= number_format($item['price']); ?></div>
         <div>
             <div>數量</div>
             <div class="mb-3 d-flex border" style="width:200px">

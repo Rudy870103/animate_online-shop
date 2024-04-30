@@ -27,17 +27,17 @@ if (empty($_SESSION['cart'])) {
             </style>
             <div class="mt-2 buycart-item mx-auto p-2 d-flex">
                 <div>
-                    <img src="./img/<?= $item['img']; ?>" style="width: 150px;">
+                    <img src="./img/<?= $item['img']; ?>" style="width: 150px;margin-right:10px">
                 </div>
-                <div class="d-flex" style="flex-direction: column;justify-content:space-between;width:100%">
-                    <div class="d-flex" style="justify-content:space-between">
+                <div class="d-flex" style="flex-direction: column;justify-content:space-between;width:100%;">
+                    <div class="d-flex" style="justify-content:space-between;font-weight:bold">
                         <div><?= $item['name']; ?> NT$<?= $item['price']; ?></div>
                         <div class="close">
                             <i class="fa-solid fa-xmark fa-fw" onclick="removeItem(<?= $item['id']; ?>)"></i>
                         </div>
                     </div>
                     <div class="d-flex" style="justify-content:space-between">
-                        <div class=" item-price<?= $item['id']; ?>">NT$<?= $item['price'] * $total; ?></div>
+                        <div class="item-price<?= $item['id']; ?>" style="font-weight:bold;color:#218500">NT$<?= $item['price'] * $total; ?></div>
                         <div>
                             <input type="button" class="less" value="-" data-id="<?= $item['id']; ?>">
                             <input type="text" name="total<?= $item['id']; ?>" id="total<?= $item['id']; ?>" value="<?= $total; ?>" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '');checkTotal(<?= $item['id']; ?>)">
