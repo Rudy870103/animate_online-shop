@@ -23,11 +23,11 @@ if ($type != 0) {
 <div class="mx-auto" style="padding-top: 50px;width:80%;">
     <h1><?= $nav; ?></h1>
     <hr>
-    <div class="d-flex justify-content-between" style="flex-wrap:wrap">
+    <div class="d-flex" style="flex-wrap:wrap;gap:1%">
         <?php
         foreach ($products as $product) {
         ?>
-            <div class="card mb-2" style="width: 24%;position:relative;z-index:1;border:none">
+            <div class="card mb-2" style="width: 24%;position:relative;z-index:1;border:none;">
                 <img src="./img/<?= $product['img']; ?>" class="card-img-top" onclick="location.href='?do=product_item&id=<?= $product['id']; ?>'">
                 <div class="card-body">
                     <div style="font-weight: bold;"><?= $product['name']; ?></div>
