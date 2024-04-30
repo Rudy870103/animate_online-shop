@@ -132,10 +132,10 @@
                                     <button class='myBtn' onclick="location.href='?do=login'"><i class='fa-solid fa-user'></i> 登入</button>
                                 <?php } ?>
                             </div>
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="請輸入關鍵字" aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Search</button>
-                            </form>
+                            <div class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" id="search" placeholder="請輸入關鍵字" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit" onclick="search()">Search</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -171,5 +171,11 @@
         if (confirm("即將登出")) {
             location.href = './api/logout.php';
         }
+    }
+
+
+    function search(){
+        let search=$("#search").val();
+        location.href=`?do=search&search_for=${search}`;
     }
 </script>
