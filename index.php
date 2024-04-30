@@ -16,6 +16,65 @@
 </head>
 
 <body>
+    <style>
+        #topBtn {
+            font-size: 2px;
+            display: none;
+            position: fixed;
+            bottom: 10%;
+            right: 2%;
+            z-index: 99;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: rgb(0, 106, 255, 0.8);
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+        }
+
+        #topBtn:hover {
+            background-color: #555;
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 79%;
+            z-index: 999;
+            background-color: rgb(248, 248, 248, 0.9) !important;
+        }
+    </style>
+    <!-- go to top button -->
+    <button onclick="topFunction()" id="topBtn" title="Go to top">
+    Top
+    </button>
+
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("topBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- go to top button end -->
 
     <header>
         <div class="top">
@@ -58,7 +117,7 @@
                                         echo "<a href='Javascript:logout()' class='mx-1'>管理登出</a>";
                                     } else {
                                         if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
-                                            $buycartTotal = "(". count($_SESSION['cart']) . ")";
+                                            $buycartTotal = "(" . count($_SESSION['cart']) . ")";
                                         } else {
                                             $buycartTotal = '';
                                         }
@@ -85,7 +144,7 @@
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" style="min-height: 100vh;">
         <?php
         $do = $_GET['do'] ?? 'main';
         $file = "./front/{$do}.php";

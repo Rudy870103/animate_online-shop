@@ -4,7 +4,7 @@ if (isset($_GET['id']) && isset($_GET['total'])) {
 }
 
 if (empty($_SESSION['cart'])) {
-    echo "<h3>購物車目前是空的</h3>";
+    echo "<h1>購物車目前是空的</h1>";
 } else {
 ?>
     <h1>購物車<span style="display: block;font-size:16px;margin-top:10px">Cart</span></h1>
