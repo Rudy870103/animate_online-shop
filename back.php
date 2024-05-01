@@ -63,6 +63,11 @@
                                     訂單管理
                                 </a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="?do=income">
+                                    營收統計
+                                </a>
+                            </li>
                         </ul>
                         <div class="mb-2" style="text-align: right;">
                             <button class="myBtn" onclick="logout()"><i class="fa-solid fa-right-from-bracket">管理登出</i></button>
