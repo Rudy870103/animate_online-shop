@@ -26,7 +26,7 @@ header .top{
 }
 
 footer{
-    height: 260px;
+    height: 270px;
     background:linear-gradient(to right, rgb(241, 255, 113), rgb(119, 219, 169), rgb(64, 230, 147));
     margin-top: 60px;
 }
