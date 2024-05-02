@@ -48,7 +48,7 @@
     </style>
     <!-- go to top button -->
     <button onclick="topFunction()" id="topBtn" title="Go to top">
-    Top
+        Top
     </button>
 
     <script>
@@ -80,8 +80,8 @@
         <div class="top">
             <!-- navbar start -->
             <nav class="navbar navbar-expand-lg bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.php">AniMate online shop</a>
+                <div class="container" style="padding:0">
+                    <a class="navbar-brand" href="index.php"><img src="./img/logo_hori.png" title="AniMate online shop" style="width: 200px;"></a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -156,10 +156,48 @@
         }
         ?>
     </main>
-
+    <style>
+        footer .container {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
 
     <footer>
-
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <div>
+                        <img src="./img/logo.png" style="width:150px">
+                    </div>
+                    <div>
+                        <img src="./img/animate.png" style="width:150px;">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between" style="width:40%">
+                    <div>
+                        關於AniMate shop
+                    </div>
+                    <div>
+                        顧客權益
+                    </div>
+                    <div>
+                        其他服務
+                    </div>
+                    <div>
+                        企業合作
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: end;">
+                0917893235 | favoriteinfinite@gmail.com | © AniMate All rights reserved.
+                <a href="https://www.instagram.com/rudy_chenboru/" target="_blank">
+                    <i class="fa-brands fa-square-instagram" style="color: white;font-size:30px;"></i>
+                </a>
+            </div>
+        </div>
     </footer>
 
 </body>
@@ -174,8 +212,8 @@
     }
 
 
-    function search(){
-        let search=$("#search").val();
-        location.href=`?do=search&search_for=${search}`;
+    function search() {
+        let search = $("#search").val();
+        location.href = `?do=search&search_for=${search}`;
     }
 </script>

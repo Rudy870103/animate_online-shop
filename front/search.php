@@ -101,7 +101,7 @@ if (!empty($products)) {
     </div>
 <?php
 } else {
-    echo "查無相關商品";
+    echo "<h1>查無相關商品</h1>";
 }
 ?>
 
