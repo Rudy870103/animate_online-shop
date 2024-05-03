@@ -18,7 +18,8 @@
 <div style="width: 80%;margin:auto;">
     <div class="product">
         <button class="myBtn mb-2" onclick="location.href='?do=add_product'">+新增商品</button>
-        <table class="text-center" style="width:100%">
+        <div style="display: block;float:right">請輸入商品編號 : <input type="text" name="search" id="search"></div>
+        <table class="text-center allItem" style="width:100%">
             <tr>
                 <th class="color">商品編號</th>
                 <th>商品圖片</th>
@@ -98,4 +99,21 @@
             location.reload()
         })
     })
+
+    $("input[name='search']").on('change', function() {
+        searchItem();
+    });
+
+    function searchItem(){
+        let value=$("#search").val();
+
+        $.ajax({
+            url:"./api/search_item.php",
+            method:"GET",
+            data: {no:value},
+            success: function(res){
+                $(".allItem").html(res);
+            }
+        })
+    }
 </script>
