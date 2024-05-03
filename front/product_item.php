@@ -48,6 +48,9 @@ $item = $Product->find($_GET['id']);
         <div class="mb-3" style="font-weight: bold;">商品介紹</div>
         <ul>
             <li>
+                <div class="mb-2">商品編號 : <?= $item['no']; ?></div>
+            </li>
+            <li>
                 <div class="mb-2">規格 : <?= $item['spec']; ?></div>
             </li>
             <li>
